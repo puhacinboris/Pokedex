@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Pokedex - Pokemon</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_of_a_pokemon">Image of a Pokemon</string>
+    <string name="details_name_number">%1$s #%2$d</string>
+    <string name="caught_pokemon">Caught Pokemon</string>
+    <string name="home">Home</string>
+    <string name="pokemon_weight">%1$s kg</string>
+    <string name="pokemon_height">%1$s m</string>
+    <string name="abilities">Abilities:</string>
+    <string name="stats">Stats:</string>
+    <string name="weight_image">Weight image</string>
+    <string name="height_image">Height image</string>
+    <string name="speed">Speed</string>
+    <string name="special_defense">Special-defense</string>
+    <string name="special_attack">Special-attack</string>
+    <string name="defense">Defense</string>
+    <string name="attack">Attack</string>
+    <string name="hp">HP</string>
+    <string name="release_pokemon">Release %1$s</string>
+    <string name="release_all_pokemon">Release all</string>
+    <string name="no_saved_pokemon">You don\'t have any Pokemon\nGo and catch some</string>
+</resources>

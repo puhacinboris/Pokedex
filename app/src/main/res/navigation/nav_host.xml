@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/pokemonListFragment">
+
+    <fragment
+        android:id="@+id/pokemonListFragment"
+        android:name="com.borispuhacin.pokedexpokemon.ui.fragments.PokemonListFragment"
+        android:label="Pokedex"
+        tools:layout="@layout/fragment_pokemon_list" >
+        <action
+            android:id="@+id/action_pokemonListFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_pokemonListFragment_to_savedPokemonListFragment"
+            app:destination="@id/savedPokemonListFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedPokemonListFragment"
+        android:name="com.borispuhacin.pokedexpokemon.ui.fragments.SavedPokemonListFragment"
+        android:label="Caught Pokemon"
+        tools:layout="@layout/fragment_saved_pokemon_list" >
+        <action
+            android:id="@+id/action_savedPokemonListFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_savedPokemonListFragment_to_pokemonListFragment"
+            app:destination="@id/pokemonListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.borispuhacin.pokedexpokemon.ui.fragments.PokemonDetailFragment"
+        android:label="Pokemon Details"
+        tools:layout="@layout/fragment_pokemon_detail" >
+        <action
+            android:id="@+id/action_pokemonDetailFragment_to_pokemonListFragment"
+            app:destination="@id/pokemonListFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_pokemonDetailFragment_to_savedPokemonListFragment"
+            app:destination="@id/savedPokemonListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
+        <argument
+            android:name="savedPokemon"
+            app:argType="com.borispuhacin.pokedexpokemon.data.database.SavedPokemon"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>

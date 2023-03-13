@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/pokemon_detail_parent_view"
+    tools:context=".ui.fragments.PokemonDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toTopOf="@+id/textView_details_name_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView_details_name_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/details_name_number"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_back" />
+
+        <ImageView
+            android:id="@+id/imageView_details_image"
+            android:layout_width="240dp"
+            android:layout_height="260dp"
+            android:contentDescription="@string/image_of_a_pokemon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_details_name_number"
+            tools:src="@drawable/pikachu" />
+
+        <LinearLayout
+            android:id="@+id/types_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_details_image"
+            tools:visibility="visible">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_type_one"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="4dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                tools:cardBackgroundColor="@color/type_electric">
+
+                <TextView
+                    android:id="@+id/textView_type_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Electric" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_type_two"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="4dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:visibility="gone"
+                tools:cardBackgroundColor="@color/type_fighting">
+
+                <TextView
+                    android:id="@+id/textView_type_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Fighting" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView_pokemon_weight"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/weight_image"
+            android:src="@drawable/weight"
+            app:layout_constraintStart_toStartOf="@+id/imageView_details_image"
+            app:layout_constraintTop_toBottomOf="@+id/types_container" />
+
+        <TextView
+            android:id="@+id/textView_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_pokemon_weight"
+            app:layout_constraintStart_toStartOf="@+id/imageView_pokemon_weight"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_pokemon_weight"
+            tools:text="@string/pokemon_weight" />
+
+        <ImageView
+            android:id="@+id/imageView_pokemon_height"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/height_image"
+            android:src="@drawable/height"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_details_image"
+            app:layout_constraintTop_toBottomOf="@+id/types_container" />
+
+        <TextView
+            android:id="@+id/textView_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_pokemon_height"
+            app:layout_constraintStart_toStartOf="@+id/imageView_pokemon_height"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_pokemon_height"
+            tools:text="@string/pokemon_height" />
+
+        <TextView
+            android:id="@+id/textView_abilities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito"
+            android:text="@string/abilities"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/textView_stats"
+            app:layout_constraintTop_toBottomOf="@+id/textView_weight" />
+
+        <TextView
+            android:id="@+id/textView_pokemon_abilities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_abilities"
+            app:layout_constraintTop_toBottomOf="@+id/textView_abilities"
+            tools:text="Blaze" />
+
+        <TextView
+            android:id="@+id/textView_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito"
+            android:text="@string/stats"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/container_hp_stat"
+            app:layout_constraintTop_toBottomOf="@+id/textView_pokemon_abilities" />
+
+        <RelativeLayout
+            android:id="@+id/container_hp_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_stats">
+
+            <ProgressBar
+                android:id="@+id/progressBar_hp"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:scaleY="7"
+                tools:progress="50"
+                android:progressTint="@color/type_grass"
+                android:progressTintMode="multiply"
+                android:progressBackgroundTint="@color/progress_backgroundTint"/>
+
+            <TextView
+                android:id="@+id/textView_stat_hp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_hp"
+                android:layout_alignEnd="@id/progressBar_hp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="-1dp"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/hp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_attack_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_hp_stat">
+
+            <ProgressBar
+                android:id="@+id/progressBar_attack"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:scaleY="7"
+                tools:progress="50"
+                android:progressTint="@color/type_fire"
+                android:progressTintMode="multiply"
+                android:progressBackgroundTint="@color/progress_backgroundTint"/>
+
+            <TextView
+                android:id="@+id/textView_stat_attack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_attack"
+                android:layout_alignEnd="@id/progressBar_attack"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/attack"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_defense_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_attack_stat">
+
+            <ProgressBar
+                android:id="@+id/progressBar_defense"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:scaleY="7"
+                tools:progress="50"
+                android:progressTint="@color/type_flying"
+                android:progressTintMode="multiply"
+                android:progressBackgroundTint="@color/progress_backgroundTint"/>
+
+            <TextView
+                android:id="@+id/textView_stat_defense"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_defense"
+                android:layout_alignEnd="@id/progressBar_defense"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/defense"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_special_attack_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_defense_stat">
+
+            <ProgressBar
+                android:id="@+id/progressBar_special_attack"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:scaleY="7"
+                tools:progress="50"
+                android:progressTint="@color/type_dragon"
+                android:progressTintMode="multiply"
+                android:progressBackgroundTint="@color/progress_backgroundTint"/>
+
+            <TextView
+                android:id="@+id/textView_stat_special_attack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_special_attack"
+                android:layout_alignEnd="@id/progressBar_special_attack"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/special_attack"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_special_defense_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_special_attack_stat">
+
+            <ProgressBar
+                android:id="@+id/progressBar_special_defense"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:scaleY="7"
+                tools:progress="50"
+                android:progressTint="@color/type_steel"
+                android:progressTintMode="multiply"
+                android:progressBackgroundTint="@color/progress_backgroundTint"/>
+
+            <TextView
+                android:id="@+id/textView_stat_special_defense"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_special_defense"
+                android:layout_alignEnd="@id/progressBar_special_defense"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/special_defense"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_speed_stat"
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@id/cardView_save_pokemon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_special_defense_stat">
+
+            <ProgressBar
+                android:id="@+id/progressBar_speed"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="150"
+                android:min="0"
+                android:progressBackgroundTint="@color/progress_backgroundTint"
+                android:progressTint="@color/type_electric"
+                android:progressTintMode="multiply"
+                android:scaleY="7"
+                tools:progress="50" />
+
+            <TextView
+                android:id="@+id/textView_stat_speed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/progressBar_speed"
+                android:layout_alignEnd="@id/progressBar_speed"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="@string/speed"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_save_pokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="46dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="6dp">
+
+            <ImageView
+                android:id="@+id/save_pokemon"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/pokeball"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/release_pokemon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release_pokemon"
+                android:drawableStart="@drawable/ic_pokeball"
+                android:drawableTint="@color/release_text_color"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/release_text_color"
+                android:padding="16dp"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

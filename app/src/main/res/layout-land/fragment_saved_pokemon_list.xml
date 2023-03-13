@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/savedListParentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ui.fragments.SavedPokemonListFragment">
+
+    <ImageView
+        android:id="@+id/imageView_release_all"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/pokeball"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_saved_pokemon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageView_release_all"
+        android:clipChildren="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:listitem="@layout/item_pokemon" />
+
+    <TextView
+        android:id="@+id/textView_no_saved_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_saved_pokemon"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</RelativeLayout>

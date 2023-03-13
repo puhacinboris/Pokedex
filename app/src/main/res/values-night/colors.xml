@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="searchView_background_color">#232323</color>
+    <color name="item_background_color">#D3D3D3</color>
+    <color name="bottomNav_background_color">#232323</color>
+    <color name="release_text_color">#FFFFFF</color>
+</resources>
